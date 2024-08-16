@@ -31,7 +31,6 @@ function encriptar(){
                 return "ufat"
         }
     });
-
     salida.value = aux;
 }
 
