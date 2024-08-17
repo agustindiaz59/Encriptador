@@ -1,4 +1,4 @@
-const textarea = document.querySelector("#texto");
+const textarea = document.querySelector("#entrada");
 const vacio = document.querySelector('.muestra_vacia');
 const contenido = document.querySelector('.muestra_no_vacia');
 const salida = document.querySelector("#salida")
@@ -14,10 +14,28 @@ function cambiar(){
         contenido.style.display = "none";
     }
 }
+function validarTexto(){
+    let texto = textarea.value;
+    if(/[A-Z]/.test(texto)){
+        alert("El texto NO debe contener mayusculas");
+        return false;
+    }
+    if(/[áéíóúÁÉÍÓÚñÑüÜàèìòùÀÈÌÒÙäëïöüÄËÏÖÜçÇß¡¿]/.test() || /[^a-zA-Z0-9\s]/.test(texto)){
+        alert("El texto no debe contener simbolos especiales ni letras con acento")
+        return false;
+    }
+    return true;
+}
 
 function encriptar(){
+    let texto = textarea.value;
+
+    if(!validarTexto()){
+        return 0;
+    }
+
     let regex = new RegExp("[aeiou]","g");
-    let aux = textarea.value.replace(regex, function(vocal){
+    let aux = texto.replace(regex, function(vocal){
         switch(vocal){
             case "a":
                 return "ai"
@@ -35,8 +53,14 @@ function encriptar(){
 }
 
 function desencriptar(){
+    let texto = textarea.value;
+    
+    if(!validarTexto()){ //Valido el texto
+        return 0;
+    }
+
     let regex = new RegExp("(ai|enter|imes|ober|ufat)","g");
-    let aux = textarea.value.replace(regex, function(txt){
+    let aux = texto.replace(regex, function(txt){
         switch(txt){
             case "ai":
                 return "a"

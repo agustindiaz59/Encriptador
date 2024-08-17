@@ -15,12 +15,12 @@
         </svg>  
     </picture>
 
-    <section class="col" id="datos">
-        <textarea id="texto" oninput="cambiar()" cols="49" rows="10" placeholder="Ingrese el texto aqui"></textarea>
+    <section class="col">
+        <textarea id="entrada" oninput="cambiar()" cols="49" rows="10" placeholder="Ingrese el texto aqui"></textarea>
 
-        <div class="row">
-            <button class="buttonLeft" onclick="encriptar()">Encriptar</button>
-            <button class="buttonRigth" onclick="desencriptar()">Desencriptar</button>
+        <div class="row buttons">
+            <button class="button_left" onclick="encriptar()">Encriptar</button>
+            <button class="button_rigth" onclick="desencriptar()">Desencriptar</button>
         </div>
     </section>
 
@@ -179,8 +179,7 @@
 
     <section class="muestra_no_vacia col centrado rectangulo">
         <div>
-            
-        <textarea id="salida" name="text" cols="20" rows="8"></textarea>
+            <textarea id="salida" name="text" cols="20" rows="8"></textarea>
         </div>
 
         <button class="button_rigth" onclick="copiar()">

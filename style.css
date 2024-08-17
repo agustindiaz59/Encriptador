@@ -1,3 +1,8 @@
+:root{
+    --primary-color: #0A3871;
+    --secondary-color: #FFFFFF;
+}
+
 .row{
     display: flex;
     flex-direction: row;
@@ -14,18 +19,18 @@
 }
 
 .rectangulo{
-    background-color: #FFFFFF;
-    border-radius: 16px;
-    padding: 14px;
+    background-color: var(--secondary-color);
+    border-radius: 1rem;
+    padding: 0.9rem;
 }
 textarea{
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: 400;
     line-height: 48px;
     text-align: left;
-    color: #0A3871;
+    color: var(--primary-color);
     border: none;
-    margin-top: 30px;
+    margin-top: 2rem;
     resize: none;
     background-color: transparent;
     font-size: xx-large;
@@ -38,19 +43,19 @@ button{
     border-style: none;
     margin: 10px;
 }
-.buttonLeft{
-    background-color: #0A3871;
-    color: #FFFFFF;
+.button_left{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 .button_rigth{
     background-color: #D8DFE8;
-    color: #0A3871;
+    color: var(--primary-color);
     border-style: solid;
-    border-color: #0A3871;
+    border-color: var(--primary-color);
 }
 
 .muestra_vacia > p{
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 24px;
     text-align: center;    
@@ -76,4 +81,25 @@ body{
 .muestra_vacia .visible {
     visibility: visible;
     opacity: 1;
+}
+
+@media (max-width: 700px) {
+    .buttons{
+        width: Fixed (343px)px;
+        height: Hug (158px)px;
+        top: 485px;
+        left: 16px;
+        gap: 24px;
+        opacity: 0px;
+    }
+    .muestra_vacia{
+        width: Fixed (327px)px;
+        height: Hug (186px)px;
+        top: 707px;
+        left: 24px;
+        padding: 32px 0px 0px 0px;
+        gap: 32px;
+        border-radius: 32px 0px 0px 0px;
+        opacity: 0px;
+    }
 }
